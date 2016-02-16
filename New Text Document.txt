@@ -1,0 +1,34 @@
+<?php 
+	session_start();
+?>
+
+
+
+
+
+
+
+
+
+	<a style="color:white" >
+	<?php 
+			echo "Logged in as : "; 
+			if($_SESSION['user']=='admin')
+			echo 'Admin';
+			else{
+			$x="select name from person where person_id= ".$_SESSION['Login']." ";
+			
+			$r=$conn->query($x);
+			  $rr=$r->fetch_assoc();
+			  echo $rr['name'];}
+			?>
+		</a>
+		<a href="logout.php" style="margin-left:15px">Logout</a>
+
+
+
+
+
+
+
+<a class="xredt" href="myinfo.php">My Info</a>

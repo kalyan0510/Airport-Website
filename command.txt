@@ -1,0 +1,8 @@
+
+
+
+
+CREATE TABLE new_table
+  AS (SELECT * FROM journey);
+Alter table journey Add Source varchar(20);
+UPDATE journey SET source=(select destination from new_table where journey_id=FLOOR(1001 + RAND() * 80) ) where 1=1;
